@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  postgres-server:
+    image: mdillon/postgis:9.5
+    container_name: postgres-server
+    volumes:
+      - './db:/var/lib/postgresql/data'
+    environment:
+      POSTGRES_DB: localedev
+      POSTGRES_USER: localedev
+      POSTGRES_PASSWORD: password
+    ports:
+      - '7001:5432'

@@ -10,7 +10,7 @@ Content-Type: application/json
     "end_time": "morning",
     "category": "roadtrip",
     "start_location": "new york",
-    "end_location": "ohio",
+    "end_location": "las vegas",
     "miles": "700",
     "purpose": "vaca"
 }

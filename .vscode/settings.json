@@ -9,6 +9,16 @@
             "name": "home",
             "database": "mydatabase",
             "username": "akash"
+        },
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 7001,
+            "driver": "PostgreSQL",
+            "name": "docker psql",
+            "database": "localedev",
+            "username": "localedev",
+            "password": "password"
         }
     ]
 }
