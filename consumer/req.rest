@@ -1,0 +1,16 @@
+GET http://localhost:8000/
+
+###
+
+POST http://localhost:8000/add
+Content-Type: application/json
+
+{
+    "start_time": "evening",
+    "end_time": "morning",
+    "category": "roadtrip",
+    "start_location": "new york",
+    "end_location": "ohio",
+    "miles": "700",
+    "purpose": "vaca"
+}
