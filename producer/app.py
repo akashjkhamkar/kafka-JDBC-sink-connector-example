@@ -1,9 +1,14 @@
 import json
 from flask import Flask, jsonify, request
-from kafka import KafkaProducer
+
+from confluent_kafka import Producer
+import socket
+
+conf = {'bootstrap.servers': "localhost:29092"}
+
+producer = Producer(conf)
 
 app = Flask(__name__)
-producer = KafkaProducer(bootstrap_servers='localhost:9092')
 
 @app.route('/', methods=['GET'])
 def hello():
@@ -15,8 +20,9 @@ def hello():
 def add_entry():
     data = request.get_json(force=True)
 
-    producer.send('uber-rides', json.dumps(data).encode('utf-8'))
-
+    # producer.send('uber-rides', data)
+    producer.produce('uber-rides', value=json.dumps(data).encode('utf-8'))
+    
     return jsonify({
         "status": "success"
     })

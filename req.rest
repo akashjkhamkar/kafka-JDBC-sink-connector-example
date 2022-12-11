@@ -6,11 +6,96 @@ POST http://localhost:8000/add
 Content-Type: application/json
 
 {
-    "start_time": "evening",
-    "end_time": "morning",
+    "start_time": "morning",
+    "end_time": "midnight",
     "category": "roadtrip",
-    "start_location": "new york",
-    "end_location": "las vegas",
-    "miles": "700",
-    "purpose": "vaca"
+    "start_location": "my mind",
+    "end_location": "peaceful life",
+    "miles": "500",
+    "purpose": "life"
+}
+###
+
+POST http://localhost:8000/add
+
+"bye"
+
+###
+POST http://localhost:8000/add
+Content-Type: application/json
+
+{
+  "schema": {
+    "type": "struct",
+    "fields": [
+      {
+        "type": "string",
+        "optional": false,
+        "field": "start_time"
+      },
+      {
+        "type": "string",
+        "optional": false,
+        "field": "end_time"
+      },
+      {
+        "type": "string",
+        "optional": false,
+        "field": "category"
+      },
+      {
+        "type": "string",
+        "optional": false,
+        "field": "start_location"
+      },
+      {
+        "type": "string",
+        "optional": false,
+        "field": "end_location"
+      },
+      {
+        "type": "string",
+        "optional": false,
+        "field": "miles"
+      },
+      {
+        "type": "string",
+        "optional": false,
+        "field": "purpose"
+      }
+    ],
+    "optional": false,
+    "name": "entry"
+  },
+  "payload": {
+    "start_time": "less gooooooooooo",
+    "end_time": "12",
+    "category": "roadtrip",
+    "start_location": "struggle",
+    "end_location": "resolution",
+    "miles": "500",
+    "purpose": "life"
+  }
+}
+
+###
+GET http://localhost:8083/connectors
+
+###
+POST http://localhost:8083/connectors
+Content-Type: application/json
+
+{
+  "name": "jdbc-sink-connector",
+  "config": {
+    "connector.class": "com.ibm.eventstreams.connect.jdbcsink.JDBCSinkConnector",
+    "tasks.max": "1",
+    "topics": "uber-rides",
+    "connection.url": "jdbc:postgresql://127.0.0.1:7001/localedev",
+    "connection.user": "localedev",
+    "connection.password": "password",
+    "connection.ds.pool.size": 5,
+    "insert.mode.databaselevel": true,
+    "table.name.format": "entry"
+  }
 }

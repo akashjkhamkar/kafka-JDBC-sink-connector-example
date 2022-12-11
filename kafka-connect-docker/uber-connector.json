@@ -1,0 +1,16 @@
+{
+    "name": "uber-jdbc-connector",
+    "config": {
+      "connector.class": "io.confluent.connect.jdbc.JdbcSinkConnector",
+      "tasks.max": "1",
+      "topics": "uber-rides",
+      "connection.url": "jdbc:postgresql://postgres-server:5432/localedev",
+      "connection.user": "localedev",
+      "connection.password": "password",
+      "connection.ds.pool.size": 5,
+      "insert.mode.databaselevel": true,
+      "table.name.format": "entry",
+      "errors.log.enable": true,
+      "errors.tolerance": "all"
+    }
+}
