@@ -39,7 +39,7 @@ services:
   
   kafka-connect:
     container_name: kafka-connect
-    build: './kafka-connect-docker'
+    build: './kafka-connect'
     ports:
       - "8083:8083"
     environment:
@@ -58,4 +58,12 @@ services:
     depends_on:
       - zookeeper
       - postgres-server
+      - broker
+
+  producer-python:
+    container_name: producer-python
+    build: './producer'
+    ports:
+      - "8000:8000"
+    depends_on:
       - broker

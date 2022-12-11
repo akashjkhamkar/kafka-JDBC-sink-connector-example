@@ -68,7 +68,7 @@ Content-Type: application/json
     "name": "entry"
   },
   "payload": {
-    "start_time": "less gooooooooooo",
+    "start_time": "is it working?",
     "end_time": "12",
     "category": "roadtrip",
     "start_location": "struggle",

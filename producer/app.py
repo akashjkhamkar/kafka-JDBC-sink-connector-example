@@ -2,9 +2,8 @@ import json
 from flask import Flask, jsonify, request
 
 from confluent_kafka import Producer
-import socket
 
-conf = {'bootstrap.servers': "localhost:29092"}
+conf = {'bootstrap.servers': "broker:9092"}
 
 producer = Producer(conf)
 
@@ -27,5 +26,6 @@ def add_entry():
         "status": "success"
     })
 
-app.run(host='0.0.0.0', port=8000)
-print("Listening on port 8000 ...")
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=8000)
+    print("Listening on port 8000 ...")
