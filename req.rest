@@ -97,7 +97,7 @@ Content-Type: application/json
     "name": "entry"
   },
   "payload": {
-    "start_time": "we did it mann",
+    "start_time": "yep... we did it mann",
     "end_time": "congrats",
     "category": "roadtrip",
     "start_location": "struggle",

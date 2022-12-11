@@ -15,6 +15,10 @@ This is will launch kafka cluster, also the connector container and our producer
 docker-compose up
 ```
 
-### Todo
+### Api
+Flask server will listen on 8000
+checkout req.rest, to see the payload structure
 
+### Todo
 Dockerise the consumer
+Shifting from orm to normal sql
