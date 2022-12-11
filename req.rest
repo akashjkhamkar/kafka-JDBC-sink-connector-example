@@ -68,8 +68,8 @@ Content-Type: application/json
     "name": "entry"
   },
   "payload": {
-    "start_time": "is it working?",
-    "end_time": "12",
+    "start_time": "stable",
+    "end_time": "congrats",
     "category": "roadtrip",
     "start_location": "struggle",
     "end_location": "resolution",
