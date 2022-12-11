@@ -37,6 +37,35 @@ Content-Type: application/json
         "type": "string",
         "optional": false,
         "field": "end_time"
+      }
+    ],
+    "optional": false,
+    "name": "entry2"
+  },
+  "payload": {
+    "start_time": "stable",
+    "end_time": "congrats"
+  }
+}
+
+
+###
+POST http://localhost:8000/add
+Content-Type: application/json
+
+{
+  "schema": {
+    "type": "struct",
+    "fields": [
+      {
+        "type": "string",
+        "optional": false,
+        "field": "start_time"
+      },
+      {
+        "type": "string",
+        "optional": false,
+        "field": "end_time"
       },
       {
         "type": "string",
@@ -68,7 +97,7 @@ Content-Type: application/json
     "name": "entry"
   },
   "payload": {
-    "start_time": "stable",
+    "start_time": "we did it mann",
     "end_time": "congrats",
     "category": "roadtrip",
     "start_location": "struggle",
